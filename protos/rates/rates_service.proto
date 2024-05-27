@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package rates;
+
+option go_package = "gitlab.axarea.ru/main/CPA/proto/rates";
+
+service ratesService {
+  rpc GetRates(GetRatesRequest) returns (GetRatesResponse);
+}
+
+message GetRatesRequest {
+
+}
+
+message GetRatesResponse {
+  double ask_price = 1;
+  double bid_price = 2;
+  string timestamp = 3;
+}
+
+// protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative rates_service.proto
