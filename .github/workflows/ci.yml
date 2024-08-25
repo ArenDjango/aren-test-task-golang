@@ -56,7 +56,7 @@ jobs:
 
       - name: Build binary
         run: |
-          go build -o bin/app ./cmd/app
+          go build -o bin/app ./cmd/api
 
   deploy:
     name: Deploy
