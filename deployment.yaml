@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: golang-test-task
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: golang-test-task
+  template:
+    metadata:
+      labels:
+        app: golang-test-task
+    spec:
+      containers:
+        - name: golang-test-task
+          image: golang:1.22
+          ports:
+            - containerPort: 8080
+          command: ["/go/src/app/cmd/api"]

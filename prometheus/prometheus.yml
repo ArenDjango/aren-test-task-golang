@@ -9,3 +9,8 @@ scrape_configs:
   - job_name: 'grpc_server'
     static_configs:
       - targets: ['host.docker.internal:50051']
+
+
+  - job_name: 'kafka'
+    static_configs:
+      - targets: ['kafka0:7071', 'kafka1:7072']
